@@ -1,0 +1,14 @@
+{
+    "name": "pocket",
+    "version": "1.0.0",
+    "main": "js/pocket.min.js",
+    "ignore": [
+        "docs/**",
+        "node_modules/*",
+        "source/**",
+        ".gitignore",
+        "Gruntfile.coffee",
+        "index.html",
+        "package.json"
+    ]
+}
