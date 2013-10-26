@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>js/pocket.js - pocket</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="../assets/css/logo.png" title="pocket"></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.0.1</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/Pocket.html">Pocket</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: js/pocket.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/**
+詰め合わせ系ライブラリ&lt;br&gt;&lt;br&gt;
+今のところ実装している機能&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;ブラウザ判定&lt;/li&gt;
+&lt;li&gt;タッチ系イベント名のラッパー変数&lt;/li&gt;
+&lt;/ul&gt;
+@class Pocket
+@constructor
+*/
+
+var Pocket, poke;
+
+Pocket = function() {
+  var getUa, more_browserver, supportTouch, ua,
+    _this = this;
+  supportTouch = &quot;ontouchstart&quot; in window;
+  /**
+  * event wrapper valiable than touchstart or mousedown
+  * タッチとマウスのスタート系イベントラッパー変数
+  * @property press
+  * @type str
+  * @default undefined
+  */
+
+  this.press = (supportTouch ? &quot;touchstart&quot; : &quot;mousedown&quot;);
+  /**
+  * event wrapper valiable than touchmove or mousemove
+  * タッチとマウスのムーブ系イベントラッパー変数
+  * @property move
+  * @type str
+  * @default undefined
+  */
+
+  this.move = (supportTouch ? &quot;touchmove&quot; : &quot;mousemove&quot;);
+  /**
+  * event wrapper valiable than touchend or mouseup
+  * タッチとマウスのエンド系イベントラッパー変数
+  * @property release
+  * @type str
+  * @default undefined
+  */
+
+  this.release = (supportTouch ? &quot;touchend&quot; : &quot;mouseup&quot;);
+  getUa = function() {
+    var OS, SP, TB, UA, VER, device, name, os, type, ver;
+    UA = window.navigator.userAgent.toLowerCase();
+    VER = window.navigator.appVersion.toLowerCase();
+    OS = window.navigator.platform.toLowerCase();
+    SP = &quot;smartphone&quot;;
+    TB = &quot;tablet&quot;;
+    if (UA.indexOf(&quot;ipad&quot;) !== -1 || UA.indexOf(&quot;ipod&quot;) !== -1 || UA.indexOf(&quot;iphone&quot;) !== -1) {
+      os = &quot;ios&quot;;
+      if (UA.indexOf(&quot;4_&quot;) !== -1) {
+        ver = 4;
+      } else if (UA.indexOf(&quot;5_&quot;) !== -1) {
+        ver = 5;
+      } else if (UA.indexOf(&quot;6_&quot;) !== -1) {
+        ver = 6;
+      } else if (UA.indexOf(&quot;7_&quot;) !== -1) {
+        ver = 7;
+      }
+      name = &quot;safari&quot;;
+      device = &quot;ipad&quot;;
+      type = TB;
+      if (UA.indexOf(&quot;ipod&quot;) !== -1 || UA.indexOf(&quot;iphone&quot;) !== -1) {
+        device = &quot;ipod&quot;;
+        type = SP;
+        if (UA.indexOf(&quot;iphone&quot;) !== -1) {
+          device = &quot;iphone&quot;;
+        }
+      }
+    } else if (UA.indexOf(&quot;android&quot;) !== -1) {
+      os = &quot;android&quot;;
+      name = &quot;androidbrowser&quot;;
+      device = &quot;androidtablet&quot;;
+      type = TB;
+      if (UA.indexOf(&quot;mobile&quot;) !== -1) {
+        device = &quot;android&quot;;
+        type = SP;
+      }
+    } else if (UA.indexOf(&quot;windows phone&quot;) !== -1) {
+      os = &quot;windowsmobile&quot;;
+      name = &quot;ie&quot;;
+      device = &quot;windowsphone&quot;;
+      type = SP;
+      ver = 6;
+      if (UA.indexOf(&quot;OS 7&quot;) !== -1) {
+        ver = 7;
+      }
+    } else {
+      os = &quot;unix&quot;;
+      if (OS.indexOf(&quot;win&quot;) !== -1) {
+        os = &quot;windows&quot;;
+      }
+      if (UA.match(/mac|ppc/)) {
+        os = &quot;macos&quot;;
+      }
+      if (UA.indexOf(&quot;msie&quot;) !== -1 || UA.indexOf(&quot;trident&quot;) !== -1) {
+        name = &quot;ie&quot;;
+        if (VERSION.indexOf(&quot;msie 6.&quot;) !== -1) {
+          ver = 6;
+        } else if (VERSION.indexOf(&quot;msie 7.&quot;) !== -1) {
+          ver = 7;
+        } else if (VERSION.indexOf(&quot;msie 8.&quot;) !== -1) {
+          ver = 8;
+        } else if (VERSION.indexOf(&quot;msie 9.&quot;) !== -1) {
+          ver = 9;
+        } else if (VERSION.indexOf(&quot;msie 10.&quot;) !== -1) {
+          ver = 10;
+        } else {
+          if (UA.indexOf(&quot;trident&quot;) !== -1) {
+            ver = 11;
+          }
+        }
+      } else if (UA.indexOf(&quot;chrome&quot;) !== -1) {
+        name = &quot;chrome&quot;;
+      } else if (UA.indexOf(&quot;safari&quot;) !== -1) {
+        name = &quot;safari&quot;;
+      } else if (UA.indexOf(&quot;gecko&quot;) !== -1) {
+        name = &quot;firefox&quot;;
+      } else {
+        if (UA.indexOf(&quot;opera&quot;) !== -1) {
+          name = &quot;opera&quot;;
+        }
+      }
+    }
+    return {
+      device: &quot;pc&quot;,
+      type: &quot;pc&quot;,
+      os: os,
+      name: name,
+      version: ver
+    };
+  };
+  ua = getUa();
+  /**
+  * device name
+  * 端末名 （PCはPC ipad とか iphone とか android とか）
+  * @property device
+  * @type str
+  * @default undefined
+  */
+
+  this.device = ua.device;
+  /**
+  * os name
+  * OS名 （ windows macos unix ios android ）
+  * @property os
+  * @type str
+  * @default undefined
+  */
+
+  this.os = ua.os;
+  /**
+  * device type ( &quot;pc&quot; or &quot;tablet&quot; or &quot;smartphone&quot; )
+  * デバイスの種類 （ PC か tablet か smartphone ）
+  * @property devicetype
+  * @type str
+  * @default undefined
+  */
+
+  this.devicetype = ua.type;
+  /**
+  * browser name
+  * ブラウザ名
+  * @property browser
+  * @type str
+  * @default undefined
+  */
+
+  this.browser = ua.name;
+  /**
+  * browser version ( suppourt ie or ios )
+  * ブラウザのバージョン （IEとiOSしかサポートしてない）
+  * @property device
+  * @type str
+  * @default undefined
+  */
+
+  this.browserver = ua.ver;
+  this.is_devicetype = function(type) {
+    type = type || &quot;pc&quot;;
+    if (type === &quot;sp&quot;) {
+      type = &quot;smartphone&quot;;
+    }
+    if (_this.devicetype === type) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+  this.is_browser = function(param) {
+    param.name = param.name || &quot;ie&quot;;
+    param.ver = param.ver || void 0;
+    if (_this.browser === param.name) {
+      if (param.ver === void 0) {
+        if (_this.browserver === param.version) {
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return true;
+      }
+    } else {
+      return false;
+    }
+  };
+  more_browserver = function(param) {
+    param.name = param.name || &quot;ie&quot;;
+    param.ver = param.ver || 6;
+    if (_this.browser === param.name) {
+      if (param.and === &quot;more&quot;) {
+        if (_this.browserver &gt;= param.version) {
+          return true;
+        }
+      } else if (param.and === &quot;less&quot;) {
+        if (_this.browserver &lt;= param.version) {
+          return true;
+        }
+      }
+    }
+  };
+  /**
+  * ブラウザが指定バージョンより上のバージョンか否かの判別メソッド
+  * 主にIEで使用。パラメータのプロパティに name を入れれば他ブラウザに対応
+  * @method andmore
+  * @param obj @.name = str browsername @.ver = num version
+  * @return boolen 指定バージョンより上のバージョンなら真
+  */
+
+  this.and_more = function(param) {
+    param.and = param.and || &quot;more&quot;;
+    return more_browserver(param);
+  };
+  /**
+  * ブラウザが指定バージョンより下のバージョンか否かの判別メソッド
+  * 主にIEで使用。パラメータのプロパティに name を入れれば他ブラウザに対応
+  * @method andless
+  * @param obj @.name = str browsername @.ver = num version
+  * @return boolen 指定バージョンより下のバージョンなら真
+  */
+
+  this.and_less = function(param) {
+    param.and = param.and || &quot;less&quot;;
+    return more_browserver(param);
+  };
+  /**
+  * デバイスの種類がpcか否かの判別メソッド
+  * @method pc
+  * @param null
+  * @return boolen デバイスタイプがpcなら真
+  */
+
+  this.pc = function() {
+    return _this.is_devicetype(&quot;pc&quot;);
+  };
+  /**
+  * デバイスの種類がtabletか否かの判別メソッド
+  * @method tablet
+  * @param null
+  * @return boolen デバイスタイプがtabletなら真
+  */
+
+  this.tablet = function() {
+    return _this.is_devicetype(&quot;tablet&quot;);
+  };
+  /**
+  * デバイスの種類がsmartphoneか否かの判別メソッド
+  * @method smartphone
+  * @param null
+  * @return boolen デバイスタイプがsmartphoneなら真
+  */
+
+  this.smartphone = function() {
+    return _this.is_devicetype(&quot;smartphone&quot;);
+  };
+  /**
+  * IE6より上のバージョンか否かの判別メソッド
+  * @method andmore_ie6
+  * @param null
+  * @return boolen IE6以上のブラウザなら真
+  */
+
+  this.andmore_ie6 = function() {
+    return _this.and_more({
+      ver: 6
+    });
+  };
+  /**
+  * IE7より上のバージョンか否かの判別メソッド
+  * @method andmore_ie7
+  * @param null
+  * @return boolen IE7以上のブラウザなら真
+  */
+
+  this.andmore_ie7 = function() {
+    return _this.and_more({
+      ver: 7
+    });
+  };
+  /**
+  * IE8より上のバージョンか否かの判別メソッド
+  * @method andmore_ie8
+  * @param null
+  * @return boolen IE8以上のブラウザなら真
+  */
+
+  this.andmore_ie8 = function() {
+    return _this.and_more({
+      ver: 8
+    });
+  };
+  /**
+  * IE9より上のバージョンか否かの判別メソッド
+  * @method andmore_ie9
+  * @param null
+  * @return boolen IE9以上のブラウザなら真
+  */
+
+  this.andmore_ie9 = function() {
+    return _this.and_more({
+      ver: 9
+    });
+  };
+  /**
+  * IE6か否かの判別メソッド
+  * @method ie6
+  * @param null
+  * @return boolen IE6なら真
+  */
+
+  this.ie = function() {
+    return _this.is_browser({
+      name: &quot;ie&quot;
+    });
+  };
+  /**
+  * IE6か否かの判別メソッド
+  * @method ie6
+  * @param null
+  * @return boolen IE6なら真
+  */
+
+  this.ie6 = function() {
+    return _this.is_browser({
+      name: &quot;ie&quot;,
+      ver: 6
+    });
+  };
+  /**
+  * IE7か否かの判別メソッド
+  * @method ie7
+  * @param null
+  * @return boolen IE7なら真
+  */
+
+  this.ie7 = function() {
+    return _this.is_browser({
+      name: &quot;ie&quot;,
+      ver: 7
+    });
+  };
+  /**
+  * IE8か否かの判別メソッド
+  * @method ie8
+  * @param null
+  * @return boolen IE8なら真
+  */
+
+  this.ie8 = function() {
+    return _this.is_browser({
+      name: &quot;ie&quot;,
+      ver: 8
+    });
+  };
+  /**
+  * IE9か否かの判別メソッド
+  * @method ie9
+  * @param null
+  * @return boolen IE9なら真
+  */
+
+  this.ie9 = function() {
+    return _this.is_browser({
+      name: &quot;ie&quot;,
+      ver: 9
+    });
+  };
+  /**
+  * IE10か否かの判別メソッド
+  * @method ie10
+  * @param null
+  * @return boolen IE10なら真
+  */
+
+  this.ie10 = function() {
+    return _this.is_browser({
+      name: &quot;ie&quot;,
+      ver: 10
+    });
+  };
+  /**
+  * IE11か否かの判別メソッド
+  * @method ie11
+  * @param null
+  * @return boolen IE11なら真
+  */
+
+  this.ie11 = function() {
+    return _this.is_browser({
+      name: &quot;ie&quot;,
+      ver: 11
+    });
+  };
+  /**
+  * firefoxか否かの判別メソッド
+  * @method firefox
+  * @param null
+  * @return boolen firefoxなら真
+  */
+
+  this.firefox = function() {
+    return _this.is_browser({
+      name: &quot;firefox&quot;
+    });
+  };
+  /**
+  * chromeか否かの判別メソッド
+  * @method chrome
+  * @param null
+  * @return boolen chromeなら真
+  */
+
+  this.chrome = function() {
+    return _this.is_browser({
+      name: &quot;chrome&quot;
+    });
+  };
+  /**
+  * safariか否かの判別メソッド
+  * @method safari
+  * @param null
+  * @return boolen safariなら真
+  */
+
+  this.safari = function() {
+    return _this.is_browser({
+      name: &quot;safari&quot;
+    });
+  };
+  /**
+  * operaか否かの判別メソッド
+  * @method opera
+  * @param null
+  * @return boolen operaなら真
+  */
+
+  this.opera = function() {
+    return _this.is_browser({
+      name: &quot;opera&quot;
+    });
+  };
+  return this;
+};
+
+poke = new Pocket();
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

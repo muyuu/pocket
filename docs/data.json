@@ -1,0 +1,458 @@
+{
+    "project": {
+        "name": "pocket",
+        "description": "JavaScript small utility library",
+        "version": "0.0.1",
+        "url": "http://labs.anticyb.org/"
+    },
+    "files": {
+        "js/pocket.js": {
+            "name": "js/pocket.js",
+            "modules": {},
+            "classes": {
+                "Pocket": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "Pocket": {
+            "name": "Pocket",
+            "shortname": "Pocket",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "js/pocket.js",
+            "line": 1,
+            "description": "詰め合わせ系ライブラリ<br><br>\n今のところ実装している機能<br>\n<ul>\n<li>ブラウザ判定</li>\n<li>タッチ系イベント名のラッパー変数</li>\n</ul>",
+            "is_constructor": 1
+        }
+    },
+    "classitems": [
+        {
+            "file": "js/pocket.js",
+            "line": 18,
+            "description": "event wrapper valiable than touchstart or mousedown\nタッチとマウスのスタート系イベントラッパー変数",
+            "itemtype": "property",
+            "name": "press",
+            "type": "str",
+            "default": "undefined",
+            "class": "Pocket"
+        },
+        {
+            "file": "js/pocket.js",
+            "line": 27,
+            "description": "event wrapper valiable than touchmove or mousemove\nタッチとマウスのムーブ系イベントラッパー変数",
+            "itemtype": "property",
+            "name": "move",
+            "type": "str",
+            "default": "undefined",
+            "class": "Pocket"
+        },
+        {
+            "file": "js/pocket.js",
+            "line": 36,
+            "description": "event wrapper valiable than touchend or mouseup\nタッチとマウスのエンド系イベントラッパー変数",
+            "itemtype": "property",
+            "name": "release",
+            "type": "str",
+            "default": "undefined",
+            "class": "Pocket"
+        },
+        {
+            "file": "js/pocket.js",
+            "line": 137,
+            "description": "device name\n端末名 （PCはPC ipad とか iphone とか android とか）",
+            "itemtype": "property",
+            "name": "device",
+            "type": "str",
+            "default": "undefined",
+            "class": "Pocket"
+        },
+        {
+            "file": "js/pocket.js",
+            "line": 146,
+            "description": "os name\nOS名 （ windows macos unix ios android ）",
+            "itemtype": "property",
+            "name": "os",
+            "type": "str",
+            "default": "undefined",
+            "class": "Pocket"
+        },
+        {
+            "file": "js/pocket.js",
+            "line": 155,
+            "description": "device type ( \"pc\" or \"tablet\" or \"smartphone\" )\nデバイスの種類 （ PC か tablet か smartphone ）",
+            "itemtype": "property",
+            "name": "devicetype",
+            "type": "str",
+            "default": "undefined",
+            "class": "Pocket"
+        },
+        {
+            "file": "js/pocket.js",
+            "line": 164,
+            "description": "browser name\nブラウザ名",
+            "itemtype": "property",
+            "name": "browser",
+            "type": "str",
+            "default": "undefined",
+            "class": "Pocket"
+        },
+        {
+            "file": "js/pocket.js",
+            "line": 173,
+            "description": "browser version ( suppourt ie or ios )\nブラウザのバージョン （IEとiOSしかサポートしてない）",
+            "itemtype": "property",
+            "name": "device",
+            "type": "str",
+            "default": "undefined",
+            "class": "Pocket"
+        },
+        {
+            "file": "js/pocket.js",
+            "line": 225,
+            "description": "ブラウザが指定バージョンより上のバージョンか否かの判別メソッド\n主にIEで使用。パラメータのプロパティに name を入れれば他ブラウザに対応",
+            "itemtype": "method",
+            "name": "andmore",
+            "params": [
+                {
+                    "name": "obj",
+                    "description": "@.name = str browsername @.ver = num version"
+                }
+            ],
+            "return": {
+                "description": "boolen 指定バージョンより上のバージョンなら真"
+            },
+            "class": "Pocket"
+        },
+        {
+            "file": "js/pocket.js",
+            "line": 237,
+            "description": "ブラウザが指定バージョンより下のバージョンか否かの判別メソッド\n主にIEで使用。パラメータのプロパティに name を入れれば他ブラウザに対応",
+            "itemtype": "method",
+            "name": "andless",
+            "params": [
+                {
+                    "name": "obj",
+                    "description": "@.name = str browsername @.ver = num version"
+                }
+            ],
+            "return": {
+                "description": "boolen 指定バージョンより下のバージョンなら真"
+            },
+            "class": "Pocket"
+        },
+        {
+            "file": "js/pocket.js",
+            "line": 249,
+            "description": "デバイスの種類がpcか否かの判別メソッド",
+            "itemtype": "method",
+            "name": "pc",
+            "params": [
+                {
+                    "name": "null",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "boolen デバイスタイプがpcなら真"
+            },
+            "class": "Pocket"
+        },
+        {
+            "file": "js/pocket.js",
+            "line": 259,
+            "description": "デバイスの種類がtabletか否かの判別メソッド",
+            "itemtype": "method",
+            "name": "tablet",
+            "params": [
+                {
+                    "name": "null",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "boolen デバイスタイプがtabletなら真"
+            },
+            "class": "Pocket"
+        },
+        {
+            "file": "js/pocket.js",
+            "line": 269,
+            "description": "デバイスの種類がsmartphoneか否かの判別メソッド",
+            "itemtype": "method",
+            "name": "smartphone",
+            "params": [
+                {
+                    "name": "null",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "boolen デバイスタイプがsmartphoneなら真"
+            },
+            "class": "Pocket"
+        },
+        {
+            "file": "js/pocket.js",
+            "line": 279,
+            "description": "IE6より上のバージョンか否かの判別メソッド",
+            "itemtype": "method",
+            "name": "andmore_ie6",
+            "params": [
+                {
+                    "name": "null",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "boolen IE6以上のブラウザなら真"
+            },
+            "class": "Pocket"
+        },
+        {
+            "file": "js/pocket.js",
+            "line": 291,
+            "description": "IE7より上のバージョンか否かの判別メソッド",
+            "itemtype": "method",
+            "name": "andmore_ie7",
+            "params": [
+                {
+                    "name": "null",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "boolen IE7以上のブラウザなら真"
+            },
+            "class": "Pocket"
+        },
+        {
+            "file": "js/pocket.js",
+            "line": 303,
+            "description": "IE8より上のバージョンか否かの判別メソッド",
+            "itemtype": "method",
+            "name": "andmore_ie8",
+            "params": [
+                {
+                    "name": "null",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "boolen IE8以上のブラウザなら真"
+            },
+            "class": "Pocket"
+        },
+        {
+            "file": "js/pocket.js",
+            "line": 315,
+            "description": "IE9より上のバージョンか否かの判別メソッド",
+            "itemtype": "method",
+            "name": "andmore_ie9",
+            "params": [
+                {
+                    "name": "null",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "boolen IE9以上のブラウザなら真"
+            },
+            "class": "Pocket"
+        },
+        {
+            "file": "js/pocket.js",
+            "line": 327,
+            "description": "IE6か否かの判別メソッド",
+            "itemtype": "method",
+            "name": "ie6",
+            "params": [
+                {
+                    "name": "null",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "boolen IE6なら真"
+            },
+            "class": "Pocket"
+        },
+        {
+            "file": "js/pocket.js",
+            "line": 339,
+            "description": "IE6か否かの判別メソッド",
+            "itemtype": "method",
+            "name": "ie6",
+            "params": [
+                {
+                    "name": "null",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "boolen IE6なら真"
+            },
+            "class": "Pocket"
+        },
+        {
+            "file": "js/pocket.js",
+            "line": 352,
+            "description": "IE7か否かの判別メソッド",
+            "itemtype": "method",
+            "name": "ie7",
+            "params": [
+                {
+                    "name": "null",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "boolen IE7なら真"
+            },
+            "class": "Pocket"
+        },
+        {
+            "file": "js/pocket.js",
+            "line": 365,
+            "description": "IE8か否かの判別メソッド",
+            "itemtype": "method",
+            "name": "ie8",
+            "params": [
+                {
+                    "name": "null",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "boolen IE8なら真"
+            },
+            "class": "Pocket"
+        },
+        {
+            "file": "js/pocket.js",
+            "line": 378,
+            "description": "IE9か否かの判別メソッド",
+            "itemtype": "method",
+            "name": "ie9",
+            "params": [
+                {
+                    "name": "null",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "boolen IE9なら真"
+            },
+            "class": "Pocket"
+        },
+        {
+            "file": "js/pocket.js",
+            "line": 391,
+            "description": "IE10か否かの判別メソッド",
+            "itemtype": "method",
+            "name": "ie10",
+            "params": [
+                {
+                    "name": "null",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "boolen IE10なら真"
+            },
+            "class": "Pocket"
+        },
+        {
+            "file": "js/pocket.js",
+            "line": 404,
+            "description": "IE11か否かの判別メソッド",
+            "itemtype": "method",
+            "name": "ie11",
+            "params": [
+                {
+                    "name": "null",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "boolen IE11なら真"
+            },
+            "class": "Pocket"
+        },
+        {
+            "file": "js/pocket.js",
+            "line": 417,
+            "description": "firefoxか否かの判別メソッド",
+            "itemtype": "method",
+            "name": "firefox",
+            "params": [
+                {
+                    "name": "null",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "boolen firefoxなら真"
+            },
+            "class": "Pocket"
+        },
+        {
+            "file": "js/pocket.js",
+            "line": 429,
+            "description": "chromeか否かの判別メソッド",
+            "itemtype": "method",
+            "name": "chrome",
+            "params": [
+                {
+                    "name": "null",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "boolen chromeなら真"
+            },
+            "class": "Pocket"
+        },
+        {
+            "file": "js/pocket.js",
+            "line": 441,
+            "description": "safariか否かの判別メソッド",
+            "itemtype": "method",
+            "name": "safari",
+            "params": [
+                {
+                    "name": "null",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "boolen safariなら真"
+            },
+            "class": "Pocket"
+        },
+        {
+            "file": "js/pocket.js",
+            "line": 453,
+            "description": "operaか否かの判別メソッド",
+            "itemtype": "method",
+            "name": "opera",
+            "params": [
+                {
+                    "name": "null",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "boolen operaなら真"
+            },
+            "class": "Pocket"
+        }
+    ],
+    "warnings": []
+}
