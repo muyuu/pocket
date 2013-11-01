@@ -109,7 +109,7 @@ Pocket = function() {
         } else if (VERSION.indexOf("MSIE 10.") !== -1) {
           ver = 10;
         } else {
-          if (UA.indexOf("trident") !== -1) {
+          if (UA.indexOf("Trident") !== -1) {
             ver = 11;
           }
         }

@@ -115,7 +115,7 @@ Pocket = () ->
           ver = 9
         else unless VERSION.indexOf("MSIE 10.") is -1
           ver = 10
-        else ver = 11  unless UA.indexOf("trident") is -1
+        else ver = 11  unless UA.indexOf("Trident") is -1
       else unless UA.indexOf("chrome") is -1
         name = "chrome"
       else unless UA.indexOf("safari") is -1
