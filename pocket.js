@@ -118,6 +118,8 @@ Pocket = function() {
       } else if (UA.indexOf("safari") !== -1) {
         name = "safari";
       } else if (UA.indexOf("gecko") !== -1) {
+        console.log(UA);
+        console.log(UA.indexOf("gecko"));
         name = "firefox";
       } else {
         if (UA.indexOf("opera") !== -1) {

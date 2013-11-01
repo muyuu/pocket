@@ -121,6 +121,8 @@ Pocket = () ->
       else unless UA.indexOf("safari") is -1
         name = "safari"
       else unless UA.indexOf("gecko") is -1
+        console.log( UA )
+        console.log( UA.indexOf("gecko") )
         name = "firefox"
       else name = "opera"  unless UA.indexOf("opera") is -1
     device: "pc"
