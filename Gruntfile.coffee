@@ -23,7 +23,7 @@ module.exports = (grunt) ->
         files: 'source/coffee/*.coffee'
         tasks: ['coffee:compile']
       scripts:
-        files: 'js/pocket.js'
+        files: './pocket.js'
         tasks: ['uglify', "yuidoc"]
       options:
         livereload: true
@@ -34,13 +34,13 @@ module.exports = (grunt) ->
         options:
           bare: true
         files:
-          "js/pocket.js": "source/coffee/pocket.coffee"
+          "./pocket.js": "source/coffee/pocket.coffee"
 
     # 圧縮
     uglify:
       my_target:
         files:
-          "js/pocket.min.js": ["js/pocket.js"]
+          "./pocket.min.js": ["./pocket.js"]
 
     # ドキュメント生成
     yuidoc:
@@ -50,7 +50,7 @@ module.exports = (grunt) ->
         version: "<%= pkg.version %>"
         url: "<%= pkg.homepage %>"
         options:
-          paths: "js/"
+          paths: "./"
           outdir: "docs/"
 
   # start local server
