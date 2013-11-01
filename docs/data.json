@@ -65,7 +65,7 @@
         },
         {
             "file": "pocket.js",
-            "line": 139,
+            "line": 140,
             "description": "device name\n端末名 （PCはPC ipad とか iphone とか android とか）",
             "itemtype": "property",
             "name": "device",
@@ -75,7 +75,7 @@
         },
         {
             "file": "pocket.js",
-            "line": 148,
+            "line": 149,
             "description": "os name\nOS名 （ windows macos unix ios android ）",
             "itemtype": "property",
             "name": "os",
@@ -85,7 +85,7 @@
         },
         {
             "file": "pocket.js",
-            "line": 157,
+            "line": 158,
             "description": "device type ( \"pc\" or \"tablet\" or \"smartphone\" )\nデバイスの種類 （ PC か tablet か smartphone ）",
             "itemtype": "property",
             "name": "devicetype",
@@ -95,7 +95,7 @@
         },
         {
             "file": "pocket.js",
-            "line": 166,
+            "line": 167,
             "description": "browser name\nブラウザ名",
             "itemtype": "property",
             "name": "browser",
@@ -105,7 +105,7 @@
         },
         {
             "file": "pocket.js",
-            "line": 175,
+            "line": 176,
             "description": "browser version ( suppourt ie or ios )\nブラウザのバージョン （IEとiOSしかサポートしてない）",
             "itemtype": "property",
             "name": "device",
@@ -115,7 +115,7 @@
         },
         {
             "file": "pocket.js",
-            "line": 227,
+            "line": 228,
             "description": "ブラウザが指定バージョンより上のバージョンか否かの判別メソッド\n主にIEで使用。パラメータのプロパティに name を入れれば他ブラウザに対応",
             "itemtype": "method",
             "name": "andmore",
@@ -132,7 +132,7 @@
         },
         {
             "file": "pocket.js",
-            "line": 239,
+            "line": 240,
             "description": "ブラウザが指定バージョンより下のバージョンか否かの判別メソッド\n主にIEで使用。パラメータのプロパティに name を入れれば他ブラウザに対応",
             "itemtype": "method",
             "name": "andless",
@@ -149,7 +149,7 @@
         },
         {
             "file": "pocket.js",
-            "line": 251,
+            "line": 252,
             "description": "デバイスの種類がpcか否かの判別メソッド",
             "itemtype": "method",
             "name": "pc",
@@ -166,7 +166,7 @@
         },
         {
             "file": "pocket.js",
-            "line": 261,
+            "line": 262,
             "description": "デバイスの種類がtabletか否かの判別メソッド",
             "itemtype": "method",
             "name": "tablet",
@@ -183,7 +183,7 @@
         },
         {
             "file": "pocket.js",
-            "line": 271,
+            "line": 272,
             "description": "デバイスの種類がsmartphoneか否かの判別メソッド",
             "itemtype": "method",
             "name": "smartphone",
@@ -200,7 +200,7 @@
         },
         {
             "file": "pocket.js",
-            "line": 281,
+            "line": 282,
             "description": "IE6より上のバージョンか否かの判別メソッド",
             "itemtype": "method",
             "name": "andmore_ie6",
@@ -217,7 +217,7 @@
         },
         {
             "file": "pocket.js",
-            "line": 293,
+            "line": 294,
             "description": "IE7より上のバージョンか否かの判別メソッド",
             "itemtype": "method",
             "name": "andmore_ie7",
@@ -234,7 +234,7 @@
         },
         {
             "file": "pocket.js",
-            "line": 305,
+            "line": 306,
             "description": "IE8より上のバージョンか否かの判別メソッド",
             "itemtype": "method",
             "name": "andmore_ie8",
@@ -251,7 +251,7 @@
         },
         {
             "file": "pocket.js",
-            "line": 317,
+            "line": 318,
             "description": "IE9より上のバージョンか否かの判別メソッド",
             "itemtype": "method",
             "name": "andmore_ie9",
@@ -268,7 +268,7 @@
         },
         {
             "file": "pocket.js",
-            "line": 329,
+            "line": 330,
             "description": "IE6か否かの判別メソッド",
             "itemtype": "method",
             "name": "ie6",
@@ -285,7 +285,7 @@
         },
         {
             "file": "pocket.js",
-            "line": 341,
+            "line": 342,
             "description": "IE6か否かの判別メソッド",
             "itemtype": "method",
             "name": "ie6",
@@ -302,7 +302,7 @@
         },
         {
             "file": "pocket.js",
-            "line": 354,
+            "line": 355,
             "description": "IE7か否かの判別メソッド",
             "itemtype": "method",
             "name": "ie7",
@@ -319,7 +319,7 @@
         },
         {
             "file": "pocket.js",
-            "line": 367,
+            "line": 368,
             "description": "IE8か否かの判別メソッド",
             "itemtype": "method",
             "name": "ie8",
@@ -336,7 +336,7 @@
         },
         {
             "file": "pocket.js",
-            "line": 380,
+            "line": 381,
             "description": "IE9か否かの判別メソッド",
             "itemtype": "method",
             "name": "ie9",
@@ -353,7 +353,7 @@
         },
         {
             "file": "pocket.js",
-            "line": 393,
+            "line": 394,
             "description": "IE10か否かの判別メソッド",
             "itemtype": "method",
             "name": "ie10",
@@ -370,7 +370,7 @@
         },
         {
             "file": "pocket.js",
-            "line": 406,
+            "line": 407,
             "description": "IE11か否かの判別メソッド",
             "itemtype": "method",
             "name": "ie11",
@@ -387,7 +387,7 @@
         },
         {
             "file": "pocket.js",
-            "line": 419,
+            "line": 420,
             "description": "firefoxか否かの判別メソッド",
             "itemtype": "method",
             "name": "firefox",
@@ -404,7 +404,7 @@
         },
         {
             "file": "pocket.js",
-            "line": 431,
+            "line": 432,
             "description": "chromeか否かの判別メソッド",
             "itemtype": "method",
             "name": "chrome",
@@ -421,7 +421,7 @@
         },
         {
             "file": "pocket.js",
-            "line": 443,
+            "line": 444,
             "description": "safariか否かの判別メソッド",
             "itemtype": "method",
             "name": "safari",
@@ -438,7 +438,7 @@
         },
         {
             "file": "pocket.js",
-            "line": 455,
+            "line": 456,
             "description": "operaか否かの判別メソッド",
             "itemtype": "method",
             "name": "opera",

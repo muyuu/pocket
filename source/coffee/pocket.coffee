@@ -103,19 +103,20 @@ Pocket = () ->
       os = "windows" if OS.indexOf("win") isnt -1
       os = "macos"   if UA.match( /mac|ppc/ )
 
-      if UA.indexOf("MSIE") isnt -1 or UA.indexOf("Trident") isnt -1
+      if UA.indexOf("msie") isnt -1 or UA.indexOf("trident") isnt -1
+        console.log( UA.indexOf("trident") )
         name = "ie"
-        unless VERSION.indexOf("MSIE 6.") is -1
+        unless VERSION.indexOf("msie 6.") is -1
           ver = 6
-        else unless VERSION.indexOf("MSIE 7.") is -1
+        else unless VERSION.indexOf("msie 7.") is -1
           ver = 7
-        else unless VERSION.indexOf("MSIE 8.") is -1
+        else unless VERSION.indexOf("msie 8.") is -1
           ver = 8
-        else unless VERSION.indexOf("MSIE 9.") is -1
+        else unless VERSION.indexOf("msie 9.") is -1
           ver = 9
-        else unless VERSION.indexOf("MSIE 10.") is -1
+        else unless VERSION.indexOf("msie 10.") is -1
           ver = 10
-        else ver = 11  unless UA.indexOf("Trident") is -1
+        else ver = 11  unless UA.indexOf("trident") is -1
       else unless UA.indexOf("chrome") is -1
         name = "chrome"
       else unless UA.indexOf("safari") is -1
