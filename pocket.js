@@ -99,15 +99,15 @@ Pocket = function() {
       if (UA.indexOf("msie") !== -1 || UA.indexOf("trident") !== -1) {
         console.log(UA.indexOf("trident"));
         name = "ie";
-        if (VERSION.indexOf("msie 6.") !== -1) {
+        if (VER.indexOf("msie 6.") !== -1) {
           ver = 6;
-        } else if (VERSION.indexOf("msie 7.") !== -1) {
+        } else if (VER.indexOf("msie 7.") !== -1) {
           ver = 7;
-        } else if (VERSION.indexOf("msie 8.") !== -1) {
+        } else if (VER.indexOf("msie 8.") !== -1) {
           ver = 8;
-        } else if (VERSION.indexOf("msie 9.") !== -1) {
+        } else if (VER.indexOf("msie 9.") !== -1) {
           ver = 9;
-        } else if (VERSION.indexOf("msie 10.") !== -1) {
+        } else if (VER.indexOf("msie 10.") !== -1) {
           ver = 10;
         } else {
           if (UA.indexOf("trident") !== -1) {
