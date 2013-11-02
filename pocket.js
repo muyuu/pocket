@@ -97,7 +97,6 @@ Pocket = function() {
         os = "macos";
       }
       if (UA.indexOf("msie") !== -1 || UA.indexOf("trident") !== -1) {
-        console.log(UA.indexOf("trident"));
         name = "ie";
         if (VER.indexOf("msie 6.") !== -1) {
           ver = 6;
