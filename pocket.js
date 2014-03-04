@@ -128,8 +128,8 @@ Pocket = function() {
       }
     }
     return {
-      device: "pc",
-      type: "pc",
+      device: device,
+      type: type,
       os: os,
       name: name,
       version: ver
