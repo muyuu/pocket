@@ -55,7 +55,7 @@ Pocket = () ->
   getUa = ->
     UA = window.navigator.userAgent.toLowerCase()
     VER = window.navigator.appVersion.toLowerCase()
-    OS = window.navigator.platform.toLowerCase()
+    os = window.navigator.platform.toLowerCase()
     SP = "smartphone"
     TB = "tablet"
 
@@ -99,6 +99,8 @@ Pocket = () ->
 
     # PC browser
     else
+      type = "pc"
+      device = "pc"
       os = "unix"
       os = "windows" if OS.indexOf("win") isnt -1
       os = "macos"   if UA.match( /mac|ppc/ )
@@ -121,10 +123,9 @@ Pocket = () ->
       else unless UA.indexOf("safari") is -1
         name = "safari"
       else unless UA.indexOf("gecko") is -1
-        console.log( UA )
-        console.log( UA.indexOf("gecko") )
         name = "firefox"
       else name = "opera"  unless UA.indexOf("opera") is -1
+
     device: device
     type: type
     os: os

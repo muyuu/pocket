@@ -43,10 +43,10 @@ Pocket = function() {
 
   this.release = (supportTouch ? "touchend" : "mouseup");
   getUa = function() {
-    var OS, SP, TB, UA, VER, device, name, os, type, ver;
+    var SP, TB, UA, VER, device, name, os, type, ver;
     UA = window.navigator.userAgent.toLowerCase();
     VER = window.navigator.appVersion.toLowerCase();
-    OS = window.navigator.platform.toLowerCase();
+    os = window.navigator.platform.toLowerCase();
     SP = "smartphone";
     TB = "tablet";
     if (UA.indexOf("ipad") !== -1 || UA.indexOf("ipod") !== -1 || UA.indexOf("iphone") !== -1) {
@@ -89,6 +89,8 @@ Pocket = function() {
         ver = 7;
       }
     } else {
+      type = "pc";
+      device = "pc";
       os = "unix";
       if (OS.indexOf("win") !== -1) {
         os = "windows";
@@ -118,8 +120,6 @@ Pocket = function() {
       } else if (UA.indexOf("safari") !== -1) {
         name = "safari";
       } else if (UA.indexOf("gecko") !== -1) {
-        console.log(UA);
-        console.log(UA.indexOf("gecko"));
         name = "firefox";
       } else {
         if (UA.indexOf("opera") !== -1) {

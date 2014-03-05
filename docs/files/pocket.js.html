@@ -131,10 +131,10 @@ Pocket = function() {
 
   this.release = (supportTouch ? &quot;touchend&quot; : &quot;mouseup&quot;);
   getUa = function() {
-    var OS, SP, TB, UA, VER, device, name, os, type, ver;
+    var SP, TB, UA, VER, device, name, os, type, ver;
     UA = window.navigator.userAgent.toLowerCase();
     VER = window.navigator.appVersion.toLowerCase();
-    OS = window.navigator.platform.toLowerCase();
+    os = window.navigator.platform.toLowerCase();
     SP = &quot;smartphone&quot;;
     TB = &quot;tablet&quot;;
     if (UA.indexOf(&quot;ipad&quot;) !== -1 || UA.indexOf(&quot;ipod&quot;) !== -1 || UA.indexOf(&quot;iphone&quot;) !== -1) {
@@ -177,6 +177,8 @@ Pocket = function() {
         ver = 7;
       }
     } else {
+      type = &quot;pc&quot;;
+      device = &quot;pc&quot;;
       os = &quot;unix&quot;;
       if (OS.indexOf(&quot;win&quot;) !== -1) {
         os = &quot;windows&quot;;
@@ -206,8 +208,6 @@ Pocket = function() {
       } else if (UA.indexOf(&quot;safari&quot;) !== -1) {
         name = &quot;safari&quot;;
       } else if (UA.indexOf(&quot;gecko&quot;) !== -1) {
-        console.log(UA);
-        console.log(UA.indexOf(&quot;gecko&quot;));
         name = &quot;firefox&quot;;
       } else {
         if (UA.indexOf(&quot;opera&quot;) !== -1) {
