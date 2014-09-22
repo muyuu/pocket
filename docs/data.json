@@ -46,7 +46,7 @@
         {
             "file": "pocket.js",
             "line": 27,
-            "description": "event wrapper valiable than touchmove or mousemove\nタッチとマウスのムーブ系イベントラッパー変数",
+            "description": "event wrapper variable than touchmove or mousemove\nタッチとマウスのムーブ系イベントラッパー変数",
             "itemtype": "property",
             "name": "move",
             "type": "str",
@@ -56,7 +56,7 @@
         {
             "file": "pocket.js",
             "line": 36,
-            "description": "event wrapper valiable than touchend or mouseup\nタッチとマウスのエンド系イベントラッパー変数",
+            "description": "event wrapper variable than touchend or mouseup\nタッチとマウスのエンド系イベントラッパー変数",
             "itemtype": "property",
             "name": "release",
             "type": "str",

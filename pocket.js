@@ -25,7 +25,7 @@ Pocket = function() {
 
   this.press = (supportTouch ? "touchstart" : "mousedown");
   /**
-  * event wrapper valiable than touchmove or mousemove
+  * event wrapper variable than touchmove or mousemove
   * タッチとマウスのムーブ系イベントラッパー変数
   * @property move
   * @type str
@@ -34,7 +34,7 @@ Pocket = function() {
 
   this.move = (supportTouch ? "touchmove" : "mousemove");
   /**
-  * event wrapper valiable than touchend or mouseup
+  * event wrapper variable than touchend or mouseup
   * タッチとマウスのエンド系イベントラッパー変数
   * @property release
   * @type str
@@ -43,86 +43,86 @@ Pocket = function() {
 
   this.release = (supportTouch ? "touchend" : "mouseup");
   getUa = function() {
-    var SP, TB, UA, VER, device, name, os, type, ver;
-    UA = window.navigator.userAgent.toLowerCase();
-    VER = window.navigator.appVersion.toLowerCase();
+    var SP, TB, device, name, os, type, ua, ver;
+    ua = window.navigator.userAgent.toLowerCase();
+    ver = window.navigator.appVersion.toLowerCase();
     os = window.navigator.platform.toLowerCase();
     SP = "smartphone";
     TB = "tablet";
-    if (UA.indexOf("ipad") !== -1 || UA.indexOf("ipod") !== -1 || UA.indexOf("iphone") !== -1) {
+    if (ua.indexOf("ipad") !== -1 || ua.indexOf("ipod") !== -1 || ua.indexOf("iphone") !== -1) {
       os = "ios";
-      if (UA.indexOf("4_") !== -1) {
+      if (ua.indexOf("4_") !== -1) {
         ver = 4;
-      } else if (UA.indexOf("5_") !== -1) {
+      } else if (ua.indexOf("5_") !== -1) {
         ver = 5;
-      } else if (UA.indexOf("6_") !== -1) {
+      } else if (ua.indexOf("6_") !== -1) {
         ver = 6;
-      } else if (UA.indexOf("7_") !== -1) {
+      } else if (ua.indexOf("7_") !== -1) {
         ver = 7;
       }
       name = "safari";
       device = "ipad";
       type = TB;
-      if (UA.indexOf("ipod") !== -1 || UA.indexOf("iphone") !== -1) {
+      if (ua.indexOf("ipod") !== -1 || ua.indexOf("iphone") !== -1) {
         device = "ipod";
         type = SP;
-        if (UA.indexOf("iphone") !== -1) {
+        if (ua.indexOf("iphone") !== -1) {
           device = "iphone";
         }
       }
-    } else if (UA.indexOf("android") !== -1) {
+    } else if (ua.indexOf("android") !== -1) {
       os = "android";
       name = "androidbrowser";
       device = "androidtablet";
       type = TB;
-      if (UA.indexOf("mobile") !== -1) {
+      if (ua.indexOf("mobile") !== -1) {
         device = "android";
         type = SP;
       }
-    } else if (UA.indexOf("windows phone") !== -1) {
+    } else if (ua.indexOf("windows phone") !== -1) {
       os = "windowsmobile";
       name = "ie";
       device = "windowsphone";
       type = SP;
       ver = 6;
-      if (UA.indexOf("OS 7") !== -1) {
+      if (ua.indexOf("OS 7") !== -1) {
         ver = 7;
       }
     } else {
       type = "pc";
       device = "pc";
       os = "unix";
-      if (OS.indexOf("win") !== -1) {
+      if (os.indexOf("win") !== -1) {
         os = "windows";
       }
-      if (UA.match(/mac|ppc/)) {
+      if (ua.match(/mac|ppc/)) {
         os = "macos";
       }
-      if (UA.indexOf("msie") !== -1 || UA.indexOf("trident") !== -1) {
+      if (ua.indexOf("msie") !== -1 || ua.indexOf("trident") !== -1) {
         name = "ie";
-        if (VER.indexOf("msie 6.") !== -1) {
+        if (ver.indexOf("msie 6.") !== -1) {
           ver = 6;
-        } else if (VER.indexOf("msie 7.") !== -1) {
+        } else if (ver.indexOf("msie 7.") !== -1) {
           ver = 7;
-        } else if (VER.indexOf("msie 8.") !== -1) {
+        } else if (ver.indexOf("msie 8.") !== -1) {
           ver = 8;
-        } else if (VER.indexOf("msie 9.") !== -1) {
+        } else if (ver.indexOf("msie 9.") !== -1) {
           ver = 9;
-        } else if (VER.indexOf("msie 10.") !== -1) {
+        } else if (ver.indexOf("msie 10.") !== -1) {
           ver = 10;
         } else {
-          if (UA.indexOf("trident") !== -1) {
+          if (ua.indexOf("trident") !== -1) {
             ver = 11;
           }
         }
-      } else if (UA.indexOf("chrome") !== -1) {
+      } else if (ua.indexOf("chrome") !== -1) {
         name = "chrome";
-      } else if (UA.indexOf("safari") !== -1) {
+      } else if (ua.indexOf("safari") !== -1) {
         name = "safari";
-      } else if (UA.indexOf("gecko") !== -1) {
+      } else if (ua.indexOf("gecko") !== -1) {
         name = "firefox";
       } else {
-        if (UA.indexOf("opera") !== -1) {
+        if (ua.indexOf("opera") !== -1) {
           name = "opera";
         }
       }

@@ -29,7 +29,7 @@ Pocket = () ->
   @.press = (if supportTouch then "touchstart" else "mousedown")
 
   ###*
-  * event wrapper valiable than touchmove or mousemove
+  * event wrapper variable than touchmove or mousemove
   * タッチとマウスのムーブ系イベントラッパー変数
   * @property move
   * @type str
@@ -38,7 +38,7 @@ Pocket = () ->
   @.move = (if supportTouch then "touchmove" else "mousemove")
 
   ###*
-  * event wrapper valiable than touchend or mouseup
+  * event wrapper variable than touchend or mouseup
   * タッチとマウスのエンド系イベントラッパー変数
   * @property release
   * @type str
@@ -53,78 +53,78 @@ Pocket = () ->
   # return { name: name, version: ver, type: type, os: os }
   # ---------------------------------------------------------
   getUa = ->
-    UA = window.navigator.userAgent.toLowerCase()
-    VER = window.navigator.appVersion.toLowerCase()
+    ua = window.navigator.userAgent.toLowerCase()
+    ver = window.navigator.appVersion.toLowerCase()
     os = window.navigator.platform.toLowerCase()
     SP = "smartphone"
     TB = "tablet"
 
     # iOS
-    if UA.indexOf("ipad") isnt -1 or UA.indexOf("ipod") isnt -1 or UA.indexOf("iphone") isnt -1
+    if ua.indexOf("ipad") isnt -1 or ua.indexOf("ipod") isnt -1 or ua.indexOf("iphone") isnt -1
       os = "ios"
-      unless UA.indexOf("4_") is -1
+      unless ua.indexOf("4_") is -1
         ver = 4
-      else unless UA.indexOf("5_") is -1
+      else unless ua.indexOf("5_") is -1
         ver = 5
-      else unless UA.indexOf("6_") is -1
+      else unless ua.indexOf("6_") is -1
         ver = 6
-      else  unless UA.indexOf("7_") is -1
+      else  unless ua.indexOf("7_") is -1
         ver = 7
       name = "safari"
       device = "ipad"
       type = TB
-      if UA.indexOf("ipod") isnt -1 or UA.indexOf("iphone") isnt -1
+      if ua.indexOf("ipod") isnt -1 or ua.indexOf("iphone") isnt -1
         device = "ipod"
         type = SP
-        device = "iphone"  unless UA.indexOf("iphone") is -1
+        device = "iphone"  unless ua.indexOf("iphone") is -1
 
     # Android
-    else unless UA.indexOf("android") is -1
+    else unless ua.indexOf("android") is -1
       os = "android"
       name = "androidbrowser"
       device = "androidtablet"
       type = TB
-      unless UA.indexOf("mobile") is -1
+      unless ua.indexOf("mobile") is -1
         device = "android"
         type = SP
 
     # Windows Phone
-    else unless UA.indexOf("windows phone") is -1
+    else unless ua.indexOf("windows phone") is -1
       os = "windowsmobile"
       name = "ie"
       device = "windowsphone"
       type = SP
       ver = 6
-      ver = 7  unless UA.indexOf("OS 7") is -1
+      ver = 7  unless ua.indexOf("OS 7") is -1
 
     # PC browser
     else
       type = "pc"
       device = "pc"
       os = "unix"
-      os = "windows" if OS.indexOf("win") isnt -1
-      os = "macos"   if UA.match( /mac|ppc/ )
+      os = "windows" if os.indexOf("win") isnt -1
+      os = "macos"   if ua.match( /mac|ppc/ )
 
-      if UA.indexOf("msie") isnt -1 or UA.indexOf("trident") isnt -1
+      if ua.indexOf("msie") isnt -1 or ua.indexOf("trident") isnt -1
         name = "ie"
-        unless VER.indexOf("msie 6.") is -1
+        unless ver.indexOf("msie 6.") is -1
           ver = 6
-        else unless VER.indexOf("msie 7.") is -1
+        else unless ver.indexOf("msie 7.") is -1
           ver = 7
-        else unless VER.indexOf("msie 8.") is -1
+        else unless ver.indexOf("msie 8.") is -1
           ver = 8
-        else unless VER.indexOf("msie 9.") is -1
+        else unless ver.indexOf("msie 9.") is -1
           ver = 9
-        else unless VER.indexOf("msie 10.") is -1
+        else unless ver.indexOf("msie 10.") is -1
           ver = 10
-        else ver = 11  unless UA.indexOf("trident") is -1
-      else unless UA.indexOf("chrome") is -1
+        else ver = 11  unless ua.indexOf("trident") is -1
+      else unless ua.indexOf("chrome") is -1
         name = "chrome"
-      else unless UA.indexOf("safari") is -1
+      else unless ua.indexOf("safari") is -1
         name = "safari"
-      else unless UA.indexOf("gecko") is -1
+      else unless ua.indexOf("gecko") is -1
         name = "firefox"
-      else name = "opera"  unless UA.indexOf("opera") is -1
+      else name = "opera"  unless ua.indexOf("opera") is -1
 
     device: device
     type: type
